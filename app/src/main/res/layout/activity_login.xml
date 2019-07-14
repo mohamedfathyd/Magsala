@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:paddingBottom="20dp"
+     android:background="#ffffff"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:text="مستخدم"
+            android:background="@drawable/rounded_edittext"
+            android:id="@+id/tit"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/frame"
+            android:layout_below="@+id/tit"
+
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        </FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+           android:layout_alignParentBottom="true"
+
+            >
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:textColor="@color/colorPrimary"
+                android:text="موصل"
+
+                android:id="@+id/teacher"
+                android:background="@drawable/rounded_edittext_blue"
+                />
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="مستخدم"
+                android:layout_marginLeft="15dp"
+                android:id="@+id/student"
+                android:textColor="@color/colorPrimary"
+                android:background="@drawable/rounded_edittext_blue"
+                />
+        </LinearLayout>
+    </RelativeLayout>

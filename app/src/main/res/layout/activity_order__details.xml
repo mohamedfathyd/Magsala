@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:layoutDirection="rtl"
+    >
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".details">
+        <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:local="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layoutDirection="ltr"
+            android:background="@color/colorPrimaryDark"
+            local:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            local:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="right"
+                android:id="@+id/car"
+                android:background="@drawable/ic_add_shopping_cart_black_24dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:text="نظرة النظافة"
+                android:layout_gravity="center"
+                android:id="@+id/toolbar_title" />
+
+        </android.support.v7.widget.Toolbar>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:src="@drawable/logo"
+            android:layout_margin="5dp"
+            android:background="@drawable/rounded_edittext_t"
+
+            android:layout_below="@+id/app_bar"
+            android:id="@+id/image"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image"
+
+
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:padding="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/det"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="اسم الخدمة :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded_edittext"
+                android:gravity="center"
+
+                android:id="@+id/name"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="2dp"
+                android:singleLine="false"
+                android:text="dlfjlsdjflsdjflsjdflsjdfldsjflsdfjslfjfkd"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/det"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:padding="15dp"
+            android:id="@+id/dett"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="السعر :"
+                 android:layout_gravity="center_vertical"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:id="@+id/price"
+                android:padding="2dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/rounded_edittext"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="10dp"
+                android:singleLine="false"
+                android:text="dlfjlsdjflsdjflsjdflsjdfldsjflsdfjslfjfkd"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dett"
+
+            android:id="@+id/pho"
+
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:padding="20dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="تفاصيل طلبك"
+                 android:layout_gravity="center_vertical"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_edittext"
+                android:gravity="center"
+                android:id="@+id/details"
+                android:textColor="@color/white"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+
+                android:padding="4dp"
+                android:singleLine="false"
+                android:text=""
+                />
+        </LinearLayout>
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_login"
+            android:layout_width="150dp"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/pho"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/rounded_edittext_blue"
+            android:text="أضافة الى سلة الطلبات "/>
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>
