@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     ProgressBar progressBar;
     private apiinterface_home apiinterface;
     int x=0;
+    Intent intent;
     private RecyclerView recyclerView,recyclerView2;
     private RecyclerView.LayoutManager layoutManager1,layoutManager2;
     CountDownTimer countDownTimer;
@@ -49,6 +50,7 @@ ImageView car;
         setContentView(R.layout.activity_main);
         Calligrapher calligrapher = new Calligrapher(this);
         calligrapher.setFont(this, "Droid.ttf", true);
+        intent=getIntent();
         car=findViewById(R.id.car);
         car.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,11 +66,9 @@ ImageView car;
         recyclerView.setLayoutManager(layoutManager1);
         //recyclerView.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, true));
         recyclerView.setHasFixedSize(true);
-        recyclerView2=(RecyclerView)findViewById(R.id.recyclerview2);
-        layoutManager2 = new GridLayoutManager(this, 3);
-        recyclerView2.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
-        recyclerView2.setHasFixedSize(true);
-        fetchInfo_annonce();
+
+        layoutManager2 = new GridLayoutManager(this, 2);
+
         fetchInfo();
 
         try {
@@ -80,7 +80,7 @@ ImageView car;
 
                 public void onTick(long millisUntilFinished) {
                     // Toast.makeText(MainActivity.this , ""+(millisUntilFinished / 1000),Toast.LENGTH_LONG).show();
-                    recyclerView2.smoothScrollToPosition(y);
+//                    recyclerView2.smoothScrollToPosition(y);
                     y++;
                     if(y>x){
                         y=0;
@@ -99,7 +99,7 @@ ImageView car;
     }
     public void fetchInfo(){
         apiinterface= Apiclient_home.getapiClient().create(apiinterface_home.class);
-        Call<List<content_category>> call = apiinterface.getcontacts_allfirst();
+        Call<List<content_category>> call = apiinterface.getcontacts_allfirst(intent.getStringExtra("type"));
         call.enqueue(new Callback<List<content_category>>() {
             @Override
             public void onResponse(Call<List<content_category>> call, Response<List<content_category>> response) {
@@ -121,29 +121,5 @@ ImageView car;
             }
         });
     }
-    public void fetchInfo_annonce(){
-        apiinterface= Apiclient_home.getapiClient().create(apiinterface_home.class);
-        Call<List<contact_annonce>> call = apiinterface.getcontacts_annonce();
-        call.enqueue(new Callback<List<contact_annonce>>() {
-            @Override
-            public void onResponse(Call<List<contact_annonce>> call, Response<List<contact_annonce>> response) {
-                try{
-                    contactList_annonce = response.body();
-                    if(!contactList_annonce.isEmpty()|| contactList_annonce.equals(null)){
-                        progressBar.setVisibility(View.GONE);
-                        x=contactList_annonce.size();
-                        recyclerAdapter_annonce=new RecyclerAdapter_first_annonce(MainActivity.this,contactList_annonce,recyclerView2);
-                        recyclerView2.setAdapter(recyclerAdapter_annonce);}
-                    progressBar.setVisibility(View.GONE);}
-                catch (Exception e){
 
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<contact_annonce>> call, Throwable t) {
-
-            }
-        });
-    }
 }

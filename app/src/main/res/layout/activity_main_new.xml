@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:layoutDirection="rtl"
+    >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ll"
+    android:layoutDirection="rtl">
+
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:local="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layoutDirection="rtl"
+        android:background="@color/colorPrimaryDark"
+        local:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        local:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:text="نظرة النظافة"
+            android:layout_gravity="center"
+            android:id="@+id/toolbar_title" />
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/car"
+            android:background="@drawable/ic_add_shopping_cart_black_24dp"
+            />
+    </android.support.v7.widget.Toolbar>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MissingConstraints"
+        android:layout_below="@id/app_bar"
+        tools:layout_editor_absoluteX="0dp"
+
+        tools:layout_editor_absoluteY="102dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:id="@+id/vie"
+
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:orientation="vertical"
+                    >
+
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:scrollbars="vertical"
+
+                        android:padding="4dp"
+                        android:id="@+id/recyclerview2"
+                        android:orientation="horizontal"
+                        android:layout_below="@+id/img"
+                        android:layout_margin="5dp"
+                        app:reverseLayout="true"
+
+                        >
+
+                    </android.support.v7.widget.RecyclerView>
+                </LinearLayout>
+            </RelativeLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+   android:weightSum="3"
+    android:layout_marginTop="20dp"
+    android:orientation="horizontal"
+    >
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:background="@drawable/aaa"
+        android:id="@+id/segad"
+        />
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:id="@+id/malabs"
+        android:background="@drawable/bbb"
+        />
+    <ImageView
+
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_weight="1"
+        android:id="@+id/mafroshat"
+        android:background="@drawable/ccc"
+        />
+</LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                >
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:id="@+id/fanadek"
+                    android:background="@drawable/ddd"
+                    />
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:id="@+id/sayarat"
+                    android:background="@drawable/eee"
+                    />
+                <ImageView
+
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:id="@+id/manzel"
+                    android:background="@drawable/fff"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                >
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:id="@+id/an"
+                    android:background="@drawable/ggg"
+                    />
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:id="@+id/etasel"
+                    android:background="@drawable/hhh"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar_subject"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="false"
+        android:visibility="visible" />
+
+</RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

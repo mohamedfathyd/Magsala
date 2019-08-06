@@ -1,11 +1,12 @@
 package com.khalej.magsala;
 
 import android.app.Application;
+import android.support.multidex.MultiDexApplication;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
-public class application extends Application {
+public class application extends MultiDexApplication {
     @Override
     public void onCreate() {
         Realm.init(this);

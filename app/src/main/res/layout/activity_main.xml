@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="@drawable/ll"
     android:layoutDirection="rtl">
 
     <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
@@ -48,41 +48,11 @@
 
             android:orientation="vertical"
             >
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="210dp"
-                android:id="@+id/vie"
 
-                >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-
-                    android:orientation="vertical"
-                    >
-
-
-                    <android.support.v7.widget.RecyclerView
-                        android:layout_width="match_parent"
-                        android:layout_height="170dp"
-                        android:scrollbars="vertical"
-                        android:background="@drawable/rounded_edittext_t"
-                        android:padding="4dp"
-                        android:id="@+id/recyclerview2"
-                        android:orientation="horizontal"
-                        android:layout_below="@+id/img"
-                        android:layout_margin="5dp"
-                        app:reverseLayout="true"
-
-                        >
-
-                    </android.support.v7.widget.RecyclerView>
-                </LinearLayout>
-            </RelativeLayout>
 
 
             <android.support.v7.widget.RecyclerView
-                android:layout_marginTop="2dp"
+                android:layout_margin="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/recyclerview"

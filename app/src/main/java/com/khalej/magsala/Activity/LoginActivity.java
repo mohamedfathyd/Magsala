@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         }
         if(sharedpref.getString("remember","").trim().equals("yes")){
 
-            startActivity(new Intent(LoginActivity.this,MainActivity.class));
+            startActivity(new Intent(LoginActivity.this,Main_new.class));
             finish();
         }
         setContentView(R.layout.activity_login);

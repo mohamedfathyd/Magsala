@@ -81,7 +81,7 @@ ProgressDialog progressDialog;
         edt = sharedpref.edit();
         if(sharedpref.getString("remember","").trim().equals("yes")){
 
-            startActivity(new Intent(getContext(),MainActivity.class));
+            startActivity(new Intent(getContext(),Main_new.class));
             getActivity().finish();
         }
         btn_login.setOnClickListener(new View.OnClickListener() {
@@ -206,7 +206,7 @@ return view;
 
                 edt.putString("remember","yes");
                 edt.apply();
-                getActivity().startActivity(new Intent(getContext(),MainActivity.class));
+                getActivity().startActivity(new Intent(getContext(),Main_new.class));
                getActivity().finish();
 
             }
